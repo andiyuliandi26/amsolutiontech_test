@@ -32,13 +32,11 @@ class ListController extends Controller
     {
         $searchModel = new CctvListSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->post()); // search item by POST method
-		$model = $this->findModel(19);
 		
 		//Yii::$app->getSession()->setFlash(/*  */'danger','test');
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-			'model'=>$model,
         ]);
     }
 

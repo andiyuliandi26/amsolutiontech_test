@@ -160,6 +160,11 @@ class CctvList extends \yii\db\ActiveRecord
 		foreach($getData as $getData){
 			$data[]=$getData->$field;
 		}
-		return $data;
+		if($data == null){
+			return [' '];
+		}else{
+			return $data;
+		}
+		
 	}
 }
